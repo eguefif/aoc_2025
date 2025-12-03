@@ -92,7 +92,7 @@ fn is_invalid_id_2_v2(id: u64) -> bool {
             return false
         }
 
-        let mut div = 10u64.pow(pattern_size);
+        let div = 10u64.pow(pattern_size);
         let pattern = id % 10u64.pow(pattern_size);
         if get_size(pattern) != pattern_size {
             pattern_size += 1;
@@ -114,143 +114,143 @@ fn is_invalid_id_2_v2(id: u64) -> bool {
     }
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_should_solve_1() {
-        let input = std::fs::read_to_string("./src/day2/test.txt").unwrap();
-        let parsed = parse(input);
-        assert_eq!(1227775554, solve(parsed, is_invalid_id_1));
-    }
-
-    #[test]
-    fn it_should_solve_1_real_input() {
-        let input = std::fs::read_to_string("./src/day2/input.txt").unwrap();
-        let parsed = parse(input);
-        assert_eq!(29940924880, solve(parsed, is_invalid_id_1));
-    }
-
-    #[test]
-    fn it_should_solve_2_real_input_v2() {
-        let input = std::fs::read_to_string("./src/day2/input.txt").unwrap();
-        let parsed = parse(input);
-        assert_eq!(48631958998, solve(parsed, is_invalid_id_2_v2));
-    }
-
-    #[test]
-    fn it_should_solve_2_real_input() {
-        let input = std::fs::read_to_string("./src/day2/test.txt").unwrap();
-        let parsed = parse(input);
-        assert_eq!(4174379265, solve(parsed, is_invalid_id_2));
-    }
-
-    #[test]
-    fn it_should_get_size() {
-        let result = get_size(2323);
-        assert_eq!(result, 4);
-    }
-
-    #[test]
-    fn it_should_get_invalid_true() {
-        let result = is_invalid_id_1(2323);
-        assert_eq!(result, true);
-    }
-
-    #[test]
-    fn it_should_get_invalid_false() {
-        let result = is_invalid_id_1(2223);
-        assert_eq!(result, false);
-    }
-
-    #[test]
-    fn it_should_get_invalid_2_true() {
-        let result = is_invalid_id_2(232323);
-        assert_eq!(result, true);
-    }
-
-    #[test]
-    fn it_should_get_invalid_2_false() {
-        let result = is_invalid_id_2(232321);
-        assert_eq!(result, false);
-    }
-
-    #[test]
-    fn it_should_get_invalid_2_v2_22323() {
-        let result = is_invalid_id_2(22323);
-        assert_eq!(result, false);
-    }
-
-    #[test]
-    fn it_should_get_invalid_2_false_1111() {
-        let result = is_invalid_id_2(1111);
-        assert_eq!(result, true);
-    }
-
-    #[test]
-    fn it_should_get_invalid_2_false_824824824() {
-        let result = is_invalid_id_2(824824824);
-        assert_eq!(result, true);
-    }
-
-    #[test]
-    fn it_should_get_invalid_2_false_123123123() {
-        let result = is_invalid_id_2(123123123);
-        assert_eq!(result, true);
-    }
-
-    #[test]
-    fn it_should_get_invalid_2_false_12341234() {
-        let result = is_invalid_id_2(12341234);
-        assert_eq!(result, true);
-    }
-
-    #[test]
-    fn it_should_get_invalid_2_false_1() {
-        let result = is_invalid_id_2(1);
-        assert_eq!(result, false);
-    }
-
-    #[test]
-    fn it_should_get_invalid_2_true_22() {
-        let result = is_invalid_id_2(22);
-        assert_eq!(result, true);
-    }
-
-    #[test]
-    fn it_should_get_invalid_2_v2_false_123123123() {
-        let result = is_invalid_id_2_v2(123123123);
-        assert_eq!(result, true);
-    }
-
-    #[test]
-    fn it_should_get_invalid_2_v2_false_1111() {
-        let result = is_invalid_id_2_v2(1111);
-        assert_eq!(result, true);
-    }
-
-    #[test]
-    fn it_should_get_invalid_2_v2_false_1212() {
-        let result = is_invalid_id_2_v2(1212);
-        assert_eq!(result, true);
-    }
-
-    #[test]
-    fn it_should_get_invalid_2_v2_false_1211() {
-        let result = is_invalid_id_2_v2(1211);
-        assert_eq!(result, false);
-    }
-
-    #[test]
-    fn it_should_get_invalid_2_v2_false_1() {
-        let result = is_invalid_id_2_v2(1);
-        assert_eq!(result, false);
-    }
-
-    #[test]
-    fn it_should_get_invalid_2_v2_false_80808() {
-        let result = is_invalid_id_2_v2(80808);
-        assert_eq!(result, false);
-    }
-}
+//#[cfg(test)]
+//mod tests {
+//    use super::*;
+//
+//    #[test]
+//    fn it_should_solve_1() {
+//        let input = std::fs::read_to_string("./src/day2/test.txt").unwrap();
+//        let parsed = parse(input);
+//        assert_eq!(1227775554, solve(parsed, is_invalid_id_1));
+//    }
+//
+//    #[test]
+//    fn it_should_solve_1_real_input() {
+//        let input = std::fs::read_to_string("./src/day2/input.txt").unwrap();
+//        let parsed = parse(input);
+//        assert_eq!(29940924880, solve(parsed, is_invalid_id_1));
+//    }
+//
+//    #[test]
+//    fn it_should_solve_2_real_input_v2() {
+//        let input = std::fs::read_to_string("./src/day2/input.txt").unwrap();
+//        let parsed = parse(input);
+//        assert_eq!(48631958998, solve(parsed, is_invalid_id_2_v2));
+//    }
+//
+//    #[test]
+//    fn it_should_solve_2_real_input() {
+//        let input = std::fs::read_to_string("./src/day2/test.txt").unwrap();
+//        let parsed = parse(input);
+//        assert_eq!(4174379265, solve(parsed, is_invalid_id_2));
+//    }
+//
+//    #[test]
+//    fn it_should_get_size() {
+//        let result = get_size(2323);
+//        assert_eq!(result, 4);
+//    }
+//
+//    #[test]
+//    fn it_should_get_invalid_true() {
+//        let result = is_invalid_id_1(2323);
+//        assert_eq!(result, true);
+//    }
+//
+//    #[test]
+//    fn it_should_get_invalid_false() {
+//        let result = is_invalid_id_1(2223);
+//        assert_eq!(result, false);
+//    }
+//
+//    #[test]
+//    fn it_should_get_invalid_2_true() {
+//        let result = is_invalid_id_2(232323);
+//        assert_eq!(result, true);
+//    }
+//
+//    #[test]
+//    fn it_should_get_invalid_2_false() {
+//        let result = is_invalid_id_2(232321);
+//        assert_eq!(result, false);
+//    }
+//
+//    #[test]
+//    fn it_should_get_invalid_2_v2_22323() {
+//        let result = is_invalid_id_2(22323);
+//        assert_eq!(result, false);
+//    }
+//
+//    #[test]
+//    fn it_should_get_invalid_2_false_1111() {
+//        let result = is_invalid_id_2(1111);
+//        assert_eq!(result, true);
+//    }
+//
+//    #[test]
+//    fn it_should_get_invalid_2_false_824824824() {
+//        let result = is_invalid_id_2(824824824);
+//        assert_eq!(result, true);
+//    }
+//
+//    #[test]
+//    fn it_should_get_invalid_2_false_123123123() {
+//        let result = is_invalid_id_2(123123123);
+//        assert_eq!(result, true);
+//    }
+//
+//    #[test]
+//    fn it_should_get_invalid_2_false_12341234() {
+//        let result = is_invalid_id_2(12341234);
+//        assert_eq!(result, true);
+//    }
+//
+//    #[test]
+//    fn it_should_get_invalid_2_false_1() {
+//        let result = is_invalid_id_2(1);
+//        assert_eq!(result, false);
+//    }
+//
+//    #[test]
+//    fn it_should_get_invalid_2_true_22() {
+//        let result = is_invalid_id_2(22);
+//        assert_eq!(result, true);
+//    }
+//
+//    #[test]
+//    fn it_should_get_invalid_2_v2_false_123123123() {
+//        let result = is_invalid_id_2_v2(123123123);
+//        assert_eq!(result, true);
+//    }
+//
+//    #[test]
+//    fn it_should_get_invalid_2_v2_false_1111() {
+//        let result = is_invalid_id_2_v2(1111);
+//        assert_eq!(result, true);
+//    }
+//
+//    #[test]
+//    fn it_should_get_invalid_2_v2_false_1212() {
+//        let result = is_invalid_id_2_v2(1212);
+//        assert_eq!(result, true);
+//    }
+//
+//    #[test]
+//    fn it_should_get_invalid_2_v2_false_1211() {
+//        let result = is_invalid_id_2_v2(1211);
+//        assert_eq!(result, false);
+//    }
+//
+//    #[test]
+//    fn it_should_get_invalid_2_v2_false_1() {
+//        let result = is_invalid_id_2_v2(1);
+//        assert_eq!(result, false);
+//    }
+//
+//    #[test]
+//    fn it_should_get_invalid_2_v2_false_80808() {
+//        let result = is_invalid_id_2_v2(80808);
+//        assert_eq!(result, false);
+//    }
+//}

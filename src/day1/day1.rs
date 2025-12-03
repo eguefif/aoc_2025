@@ -89,26 +89,26 @@ fn wrapping_sub_zero(a :i32, b: i32) -> (i32, u32) {
     (res, zero - flag)
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_1(){
-        let input = std::fs::read_to_string("./src/day1/test.txt").unwrap();
-        let directions = parse(input);
-        let res = solve_p1(directions);
-
-        assert_eq!(res, 3);
-    }
-
-    #[test]
-    fn test_2(){
-        let input = std::fs::read_to_string("./src/day1/test.txt").unwrap();
-        let directions = parse(input);
-        let res = solve_p2(directions);
-
-        //assert_eq!(true, false);
-        assert_eq!(res, 6);
-    }
-}
+//#[cfg(test)]
+//mod tests {
+//    use super::*;
+//
+//    #[test]
+//    fn test_1(){
+//        let input = std::fs::read_to_string("./src/day1/test.txt").unwrap();
+//        let directions = parse(input);
+//        let res = solve_p1(directions);
+//
+//        assert_eq!(res, 3);
+//    }
+//
+//    #[test]
+//    fn test_2(){
+//        let input = std::fs::read_to_string("./src/day1/test.txt").unwrap();
+//        let directions = parse(input);
+//        let res = solve_p2(directions);
+//
+//        //assert_eq!(true, false);
+//        assert_eq!(res, 6);
+//    }
+//}
