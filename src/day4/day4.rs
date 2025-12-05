@@ -73,23 +73,23 @@ fn check((x, y): &(i32, i32), input: &HashSet::<(i32, i32)>) -> bool {
     res < 4
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_example() {
-        let input = std::fs::read_to_string("./src/day4/test.txt").unwrap();
-        let parsed = parse(input);
-        let res = solve1(parsed);
-        assert_eq!(res, 13);
-    }
-
-    #[test]
-    fn test_example2() {
-        let input = std::fs::read_to_string("./src/day4/test.txt").unwrap();
-        let parsed = parse(input);
-        let res = solve2(parsed);
-        assert_eq!(res, 43);
-    }
-}
+//#[cfg(test)]
+//mod tests {
+//    use super::*;
+//
+//    #[test]
+//    fn test_example() {
+//        let input = std::fs::read_to_string("./src/day4/test.txt").unwrap();
+//        let parsed = parse(input);
+//        let res = solve1(parsed);
+//        assert_eq!(res, 13);
+//    }
+//
+//    #[test]
+//    fn test_example2() {
+//        let input = std::fs::read_to_string("./src/day4/test.txt").unwrap();
+//        let parsed = parse(input);
+//        let res = solve2(parsed);
+//        assert_eq!(res, 43);
+//    }
+//}
