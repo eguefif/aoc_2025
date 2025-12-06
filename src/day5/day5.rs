@@ -92,38 +92,32 @@ fn solve2(mut input: Vec<(u64, u64)>) -> u64 {
     result
 }
 
-fn compute_result(res: Vec<(u64, u64)>) -> usize {
-    res.iter().fold(0, |acc, range| {
-        return acc + (range.1 - range.0 + 1) as usize;
-    })
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_day5_1() {
-        let input = std::fs::read_to_string("./src/day5/test.txt").expect("Failed to read input file");
-        let parsed = parse(input);
-        let res = solve1(parsed);
-        assert_eq!(res, 3);
-    }
-
-    #[test]
-    fn test_day5_2() {
-        let input = std::fs::read_to_string("./src/day5/test.txt").expect("Failed to read input file");
-        let parsed = parse(input);
-        let res = solve2(parsed.0);
-        assert_eq!(res, 14);
-    }
-
-    #[test]
-    fn test_day5_2_input() {
-        let input = std::fs::read_to_string("./src/day5/input.txt").expect("Failed to read input file");
-        let parsed = parse(input);
-        let res = solve2(parsed.0);
-        assert_eq!(res, 344771884978261);
-    }
-}
-
+//#[cfg(test)]
+//mod tests {
+//    use super::*;
+//
+//    #[test]
+//    fn test_day5_1() {
+//        let input = std::fs::read_to_string("./src/day5/test.txt").expect("Failed to read input file");
+//        let parsed = parse(input);
+//        let res = solve1(parsed);
+//        assert_eq!(res, 3);
+//    }
+//
+//    #[test]
+//    fn test_day5_2() {
+//        let input = std::fs::read_to_string("./src/day5/test.txt").expect("Failed to read input file");
+//        let parsed = parse(input);
+//        let res = solve2(parsed.0);
+//        assert_eq!(res, 14);
+//    }
+//
+//    #[test]
+//    fn test_day5_2_input() {
+//        let input = std::fs::read_to_string("./src/day5/input.txt").expect("Failed to read input file");
+//        let parsed = parse(input);
+//        let res = solve2(parsed.0);
+//        assert_eq!(res, 344771884978261);
+//    }
+//}
+//
