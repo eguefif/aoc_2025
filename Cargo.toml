@@ -30,5 +30,3 @@ path = "./src/day6/day6.rs"
 [[bin]]
 name = "day7"
 path = "./src/day7/day7.rs"
-
-[dependencies]
