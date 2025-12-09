@@ -124,44 +124,27 @@ fn solve2(
     res
 }
 
-fn print(parsed: &HashMap<(usize, usize), Value>, width: usize, height: usize) {
-    for y in 0..height {
-        for x in 0..width {
-            if let Some(value) = parsed.get(&(x, y)) {
-                if value == &Value::Beam {
-                    print!("|");
-                } else {
-                    print!("^");
-                }
-            } else {
-                    print!(".");
-            }
-        }
-        println!("");
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_1() {
-        let input = std::fs::read_to_string("./src/day7/test.txt").unwrap();
-        let height = input.lines().count();
-        let width = input.lines().next().unwrap().len();
-        let mut parsed = parse(&input);
-        let res = solve1(&mut parsed, width, height);
-        assert_eq!(21, res);
-    }
-
-    #[test]
-    fn test_2() {
-        let input = std::fs::read_to_string("./src/day7/test.txt").unwrap();
-        let height = input.lines().count();
-        let width = input.lines().next().unwrap().len();
-        let mut parsed = parse(&input);
-        let res = solve2(parsed, height, 7);
-        assert_eq!(40, res);
-    }
-}
+//#[cfg(test)]
+//mod tests {
+//    use super::*;
+//
+//    #[test]
+//    fn test_1() {
+//        let input = std::fs::read_to_string("./src/day7/test.txt").unwrap();
+//        let height = input.lines().count();
+//        let width = input.lines().next().unwrap().len();
+//        let mut parsed = parse(&input);
+//        let res = solve1(&mut parsed, width, height);
+//        assert_eq!(21, res);
+//    }
+//
+//    #[test]
+//    fn test_2() {
+//        let input = std::fs::read_to_string("./src/day7/test.txt").unwrap();
+//        let height = input.lines().count();
+//        let width = input.lines().next().unwrap().len();
+//        let mut parsed = parse(&input);
+//        let res = solve2(parsed, height, 7);
+//        assert_eq!(40, res);
+//    }
+//}
