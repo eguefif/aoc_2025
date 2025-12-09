@@ -38,3 +38,6 @@ path = "./src/day8/day8.rs"
 [[bin]]
 name = "day9"
 path = "./src/day9/day9.rs"
+
+[dependencies]
+itertools = "0.14.0"
