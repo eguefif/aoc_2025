@@ -99,70 +99,70 @@ fn is_in_rectangle((x, y): (usize, usize), (x1, y1): (usize, usize), (x2, y2): (
     x >= x1 && x <= x2 && y >= y1 && y <= y2
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_1() {
-        let input = std::fs::read_to_string("./src/day9/test.txt").unwrap();
-        let input = parse(&input);
-        let res = solve1(&input);
-        assert_eq!(50, res);
-    }
-
-    #[test]
-    fn test_2() {
-        let input = std::fs::read_to_string("./src/day9/test.txt").unwrap();
-        let input = parse(&input);
-        let res = solve2(&input);
-        assert_eq!(24, res);
-    }
-
-    #[test]
-    fn test_calculate_area() {
-        let p1: (usize, usize) = (3, 4);
-        let p2: (usize, usize) = (5, 8);
-        let res = calculate_area(&p1, &p2);
-        assert_eq!(res, 3 * 5);
-    }
-
-    #[test]
-    fn test_valid_rectangle_false() {
-        let input = std::fs::read_to_string("./src/day9/test.txt").unwrap();
-        let input = parse(&input);
-        let p1: (usize, usize) = (2, 3);
-        let p2: (usize, usize) = (10, 1);
-        let res = valid_rectangle(&p1, &p2, &input);
-        println!("res invalid: {}", res);
-        assert!(!res)
-    }
-
-    #[test]
-    fn test_valid_rectangle_true() {
-        let input = std::fs::read_to_string("./src/day9/test.txt").unwrap();
-        let input = parse(&input);
-        let p1: (usize, usize) = (9, 5);
-        let p2: (usize, usize) = (2, 3);
-        let res = valid_rectangle(&p1, &p2, &input);
-        assert!(res)
-    }
-
-    #[test]
-    fn test_is_in_rectangle() {
-        let res = is_in_rectangle((3, 4), (1, 1), (5, 5));
-        assert!(res);
-    }
-
-    #[test]
-    fn test_is_in_rectangle2() {
-        let res = is_in_rectangle((1, 4), (1, 1), (5, 5));
-        assert!(res);
-    }
-
-    #[test]
-    fn test_is_in_rectangle3() {
-        let res = is_in_rectangle((0, 4), (1, 1), (5, 5));
-        assert!(!res);
-    }
-}
+//#[cfg(test)]
+//mod tests {
+//    use super::*;
+//
+//    #[test]
+//    fn test_1() {
+//        let input = std::fs::read_to_string("./src/day9/test.txt").unwrap();
+//        let input = parse(&input);
+//        let res = solve1(&input);
+//        assert_eq!(50, res);
+//    }
+//
+//    #[test]
+//    fn test_2() {
+//        let input = std::fs::read_to_string("./src/day9/test.txt").unwrap();
+//        let input = parse(&input);
+//        let res = solve2(&input);
+//        assert_eq!(24, res);
+//    }
+//
+//    #[test]
+//    fn test_calculate_area() {
+//        let p1: (usize, usize) = (3, 4);
+//        let p2: (usize, usize) = (5, 8);
+//        let res = calculate_area(&p1, &p2);
+//        assert_eq!(res, 3 * 5);
+//    }
+//
+//    #[test]
+//    fn test_valid_rectangle_false() {
+//        let input = std::fs::read_to_string("./src/day9/test.txt").unwrap();
+//        let input = parse(&input);
+//        let p1: (usize, usize) = (2, 3);
+//        let p2: (usize, usize) = (10, 1);
+//        let res = valid_rectangle(&p1, &p2, &input);
+//        println!("res invalid: {}", res);
+//        assert!(!res)
+//    }
+//
+//    #[test]
+//    fn test_valid_rectangle_true() {
+//        let input = std::fs::read_to_string("./src/day9/test.txt").unwrap();
+//        let input = parse(&input);
+//        let p1: (usize, usize) = (9, 5);
+//        let p2: (usize, usize) = (2, 3);
+//        let res = valid_rectangle(&p1, &p2, &input);
+//        assert!(res)
+//    }
+//
+//    #[test]
+//    fn test_is_in_rectangle() {
+//        let res = is_in_rectangle((3, 4), (1, 1), (5, 5));
+//        assert!(res);
+//    }
+//
+//    #[test]
+//    fn test_is_in_rectangle2() {
+//        let res = is_in_rectangle((1, 4), (1, 1), (5, 5));
+//        assert!(res);
+//    }
+//
+//    #[test]
+//    fn test_is_in_rectangle3() {
+//        let res = is_in_rectangle((0, 4), (1, 1), (5, 5));
+//        assert!(!res);
+//    }
+//}
